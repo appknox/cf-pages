@@ -30,9 +30,9 @@
   {
     "name": "under_attack",
     "title": "Just A Moment",
-    "heading": "Checking your browser before accessing <span id=\"domainName\"></span>",
+    "heading": "Just A Moment",
     "description": "",
-    "cfshortcode": ""
+    "cfshortcode": "::IM_UNDER_ATTACK_BOX::"
   },
   {
     "name": "waf_block",

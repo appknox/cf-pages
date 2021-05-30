@@ -323,36 +323,6 @@ h1 {
   font-weight: 600;
 }
 
-ul.cferror_details {
-  border-top: 2rem solid transparent;
-  position: relative;
-  padding-left: 0;
-}
-
-ul.cferror_details::before {
-  content: "";
-  border-top: 2px solid #d3d3d3;
-  width: 100%;
-  top: -11px;
-  position: absolute;
-}
-
-ul.cferror_details li {
-  display: inline;
-  margin-right: 0.6rem;
-  margin-bottom: 0.2rem;
-  font-size: 10px;
-}
-
-ul.cferror_details li::before {
-  content: '•';
-  padding-right: 6px;
-}
-
-ul.cferror_details li:first-child::before {
-  content: none;
-}
-
 .left-sec p.std-text.bold {
   font-weight: 600;
 }

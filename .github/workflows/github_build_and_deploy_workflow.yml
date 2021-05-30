@@ -1,0 +1,70 @@
+name: Deploy Pages to S3
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the website
+      run: npm run build
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync ./_site/ s3://${{ secrets.S3_BUCKET }} --delete
+
+    - name: get updated files
+      run: |
+        # allow grep to fail
+        set +e
+        FILES=$(git log --stat="1000" -1 | grep '|' | awk '{print "/"$1}' | grep -e '\.html$')
+        set -e
+        [ -z "$FILES" ] && touch .updated_files && exit 0
+        for file in $FILES; do
+          echo $file
+          # add bare directory to list of updated paths when we see index.html
+          [[ "$file" == *"/index.html" ]] && echo $file | sed -e 's/\/index.html$/\//'
+        done | sort | uniq | tr '\n' ' ' > .updated_files
+
+    - name: invalidate
+      env:
+        PATHS_FROM: .updated_files
+        DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
+      run: |
+        if [[ -n "$PATHS_FROM" ]]; then
+          echo "*** Reading PATHS from $PATHS_FROM"
+          if [[ ! -f  $PATHS_FROM ]]; then
+            echo "PATHS file not found. nothing to do. exiting"
+            exit 0
+          fi
+          PATHS=$(cat $PATHS_FROM)
+          echo "PATHS=$PATHS"
+          if [[ -z "$PATHS" ]]; then
+            echo "PATHS is empty. nothing to do. exiting"
+            exit 0
+          fi
+        fi
+
+        # Handle multiple space-separated args but still quote each arg to avoid any
+        # globbing of args containing wildcards. i.e., if PATHS="/* /foo"
+        IFS=', ' read -r -a PATHS_ARR <<< "$PATHS"
+
+        aws cloudfront create-invalidation \
+          --distribution-id "$DISTRIBUTION" \
+          --paths "${PATHS_ARR[@]}" \
+          $*

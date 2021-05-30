@@ -1,0 +1,51 @@
+---
+layout: layouts/template.njk
+pagination:
+    data: errors
+    alias: cferrors
+    size: 1
+eleventyComputed:
+  title: "{{ cferrors.title }}"
+permalink: "{{ cferrors.name | slug }}/"
+---
+
+<div class="bubbles-centre">
+  <div class="bubbles"></div>
+  <div class="bubbles"></div>
+  <div class="bubbles"></div>
+</div>
+
+<div class="text-black text-5xl md:text-15xl font-black">
+  {{ cferrors.heading | safe  }}
+</div>
+<div class="text-grey-darker text-2xl md:text-3xl mb-7 leading-normal">
+</div>
+
+<p class="sub-header">
+  <span class="h-1 text-3xl md:text-3xl">
+    {{ cferrors.description | safe }}
+  </span>
+</p>
+<p class="text-grey-darker text-2xl md:text-3xl mb-7 leading-normal">
+</p>
+{{ cferrors.cfshortcode | safe}}
+
+<div class="text-grey-darker text-2xl md:text-3xl mb-7 leading-normal">
+</div>
+
+<p class="sub-header">
+  <span class="h-1">Status：<a href="https://status.appknox.com">https://status.appknox.com</a></span>
+</p>
+<br><br>
+
+<div class="sub-footer">
+  <div class="w-full h-2 bg-grey-light my-3 md:my-6"></div>
+  <ul>
+    <li>Cloudflare event ID: ::RAY_ID::</li>
+    <li>Your IP: ::CLIENT_IP::</li>
+    <li>Copyright © <script>
+        document.write(new Date().getUTCFullYear());
+
+      </script> Appknox, Xysec Labs</li>
+  </ul>
+</div>

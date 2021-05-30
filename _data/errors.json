@@ -16,7 +16,7 @@
   {
     "name": "captcha",
     "title": "Safety Verification",
-    "heading": "Verify You're Human",
+    "heading": "Verifying If You're Human ...",
     "description": "Please complete the security check to access <span id=\"domainName\"></span>",
     "cfshortcode": "::CAPTCHA_BOX::"
   },

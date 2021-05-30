@@ -4,24 +4,32 @@
   "description": "Cloudflare Custom Error Pages",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy",
+    "test": "html-validate _site/*"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/appknox/cf-pages.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Appknox",
+    "email": "engineering@appknox.com",
+    "url": "https://www.appknox.com"
+  },
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/appknox/cf-pages/issues"
   },
   "homepage": "https://github.com/appknox/cf-pages#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1"
-  },
-  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
     "clean-css": "^5.1.2",
+    "html-validate": "^4.13.1",
     "terser": "^5.7.0"
   }
 }

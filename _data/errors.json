@@ -1,7 +1,7 @@
 [
   {
     "name": "5xx",
-    "title": "Unable to connect to server",
+    "title": "Cannot Connect To Server",
     "heading": "Connection To Server Failed",
     "description": "Please try again later or contact Customer Support",
     "cfshortcode": "::CLOUDFLARE_ERROR_500S_BOX::"
@@ -9,8 +9,8 @@
   {
     "name": "100x",
     "title": "DNS resolution error",
-    "heading": "Failed Resolving DNS",
-    "description": "We are currently unable to resolve your requested domain.",
+    "heading": "Unable To Resolve The Requested Domain",
+    "description": "",
     "cfshortcode": "::CLOUDFLARE_ERROR_1000S_BOX::"
   },
   {
@@ -22,21 +22,21 @@
   },
   {
     "name": "ip_block",
-    "title": "Access denied",
-    "heading": "Access denied",
+    "title": "Access Denied",
+    "heading": "Access Denied",
     "description": "System has banned your IP address ::CLIENT_IP::",
     "cfshortcode": "Your IP address is forbidden to visit this site"
   },
   {
     "name": "under_attack",
-    "title": "Just a moment",
+    "title": "Just A Moment",
     "heading": "Checking your browser before accessing <span id=\"domainName\"></span>",
     "description": "",
     "cfshortcode": ""
   },
   {
     "name": "waf_block",
-    "title": "Access denied",
+    "title": "Access Denied",
     "heading": "Sorry, your access has been blocked",
     "description": "This site is using security services to protect itself from online attacks",
     "cfshortcode": "The action you performed triggered the security defense mechanism, so access is blocked. Please try again later. <br> <br>There are many actions that may trigger this interception, including submitting a word or phrase, SQL command, or malformed data"

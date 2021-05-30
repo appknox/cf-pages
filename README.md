@@ -5,7 +5,7 @@ Objective is to have a clean, quick ly loaded fun error pages
 
 ## Demo
 
-![Template Screen Shot][product-screenshot]
+[![Template Screen Shot][product-screenshot]](https://cferror.appknox.com/)
 
 ## Things Considered
 
@@ -19,12 +19,12 @@ Since these are error pages, it has to follow the below guidelines, so that it c
 
 ## Cloudflare Error Pages Supported
 
-- **5XX** : 500 Class Errors
-- **100X** : 1000 Class Errors
-- **ip_block** : IP/Country Block
-- **under_attack** : I'm Under Attack Mode™ Challenge
-- **waf_block** : WAF Block
-- **captcha** : Basic Security Challenge, WAF Challenge & Country Challenge
+- [**5XX**](https://cferror.appknox.com/5xx/index.html) : 500 Class Errors
+- [**100X**](https://cferror.appknox.com/100x/index.html) : 1000 Class Errors
+- [**ip_block**](https://cferror.appknox.com/ip_block/index.html) : IP/Country Block
+- [**under_attack**](https://cferror.appknox.com/under_attack/index.html) : I'm Under Attack Mode™ Challenge
+- [**waf_block**](https://cferror.appknox.com/waf_block/index.html) : WAF Block
+- [**captcha**](https://cferror.appknox.com/captcha/index.html) : Basic Security Challenge, WAF Challenge & Country Challenge
 
 ## TODO
 

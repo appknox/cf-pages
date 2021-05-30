@@ -32,7 +32,7 @@
     "title": "Just a moment",
     "heading": "Checking your browser before accessing <span id=\"domainName\"></span>",
     "description": "",
-    "cfshortcode": "::IM_UNDER_ATTACK_BOX::"
+    "cfshortcode": ""
   },
   {
     "name": "waf_block",

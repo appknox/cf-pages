@@ -39,6 +39,6 @@
     "title": "Access denied",
     "heading": "Sorry, your access has been blocked",
     "description": "This site is using security services to protect itself from online attacks",
-    "cfshortcode": "The action you performed triggered the security defense mechanism, so access is blocked. Please try again later. <br /> <br />There are many actions that may trigger this interception, including submitting a word or phrase, SQL command, or malformed data"
+    "cfshortcode": "The action you performed triggered the security defense mechanism, so access is blocked. Please try again later. <br> <br>There are many actions that may trigger this interception, including submitting a word or phrase, SQL command, or malformed data"
   }
 ]
